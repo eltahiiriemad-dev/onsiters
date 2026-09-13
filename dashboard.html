@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Onsiters — Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      const content = renderShell("dashboard", "Dashboard");
+      if (!content) return;
+
+      const session = getSession();
+      const [people, cases, vehicles] = await Promise.all([
+        loadData("people.json"),
+        loadData("cases.json"),
+        loadData("vehicles.json"),
+      ]);
+
+      const openCases = cases.filter((c) => c.status === "Open").length;
+      const recentCases = [...cases]
+        .sort((a, b) => (a.date < b.date ? 1 : -1))
+        .slice(0, 4);
+
+      function statusClassLocal(status) {
+        return status.toLowerCase().replace(/\s+/g, "-");
+      }
+
+      content.innerHTML = `
+        <p class="lede">Signed in as ${session.displayName} (${session.role}). This dashboard summarizes the fictional Onsiters demo dataset.</p>
+
+        <div class="grid-cols" style="margin-bottom: 26px;">
+          <div class="stat-box">
+            <div class="num">${cases.length}</div>
+            <div class="label">Total cases (fictional)</div>
+          </div>
+          <div class="stat-box">
+            <div class="num">${openCases}</div>
+            <div class="label">Open cases</div>
+          </div>
+          <div class="stat-box">
+            <div class="num">${people.length}</div>
+            <div class="label">People on record</div>
+          </div>
+        </div>
+
+        <div class="result-group-label">RECENT CASES</div>
+        <div class="record-list" id="recentCases"></div>
+      `;
+
+      const recentEl = document.getElementById("recentCases");
+      recentEl.innerHTML = recentCases
+        .map(
+          (c) => `
+        <a class="record-row" href="cases.html?id=${encodeURIComponent(c.id)}">
+          <div class="record-main">
+            <div class="id">${c.id}</div>
+            <div class="title">${c.title}</div>
+            <div class="sub">${c.category} · ${c.location} · ${c.date}</div>
+          </div>
+          <span class="pill ${statusClassLocal(c.status)}">${c.status}</span>
+          <span class="link-arrow">VIEW →</span>
+        </a>`
+        )
+        .join("");
+    });
+  </script>
+</body>
+</html>

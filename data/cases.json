@@ -1,0 +1,82 @@
+[
+  {
+    "id": "CASE-1042",
+    "title": "Storage Unit Break-In",
+    "category": "Theft",
+    "status": "Open",
+    "date": "2026-04-17",
+    "location": "Rabat",
+    "description": "A storage facility on the outskirts of the city was accessed overnight. Fictional demo record used to illustrate the Onsiters case interface.",
+    "relatedPeople": ["P-0091", "P-0098"]
+  },
+  {
+    "id": "CASE-1077",
+    "title": "Invoice Manipulation Scheme",
+    "category": "Fraud",
+    "status": "Under Review",
+    "date": "2026-03-02",
+    "location": "Tangier",
+    "description": "A small import business reported altered invoices routed through an intermediary account. Fictional demo record for training purposes only.",
+    "relatedPeople": ["P-0093", "P-0097"]
+  },
+  {
+    "id": "CASE-1108",
+    "title": "Unauthorized Account Access",
+    "category": "Cybercrime",
+    "status": "Open",
+    "date": "2026-05-29",
+    "location": "Fes",
+    "description": "A household network showed repeated unauthorized login attempts over several days. Fictional demo record with no connection to real incidents.",
+    "relatedPeople": ["P-0092", "P-0094"]
+  },
+  {
+    "id": "CASE-1123",
+    "title": "Misplaced Shipment",
+    "category": "Missing Property",
+    "status": "Closed",
+    "date": "2026-02-11",
+    "location": "Marrakesh",
+    "description": "A shipment was reported missing and later located at an incorrect distribution point. Fictional demo record.",
+    "relatedPeople": ["P-0095"]
+  },
+  {
+    "id": "CASE-1156",
+    "title": "Storefront Vandalism",
+    "category": "Vandalism",
+    "status": "Open",
+    "date": "2026-06-08",
+    "location": "Rabat",
+    "description": "Graffiti and minor property damage reported at a row of storefronts. Fictional demo record used to populate the Onsiters case list.",
+    "relatedPeople": ["P-0096"]
+  },
+  {
+    "id": "CASE-1189",
+    "title": "Phishing Campaign Report",
+    "category": "Cybercrime",
+    "status": "Under Review",
+    "date": "2026-06-22",
+    "location": "Casablanca",
+    "description": "Several fictional demo accounts flagged a wave of suspicious messages requesting login details.",
+    "relatedPeople": []
+  },
+  {
+    "id": "CASE-1204",
+    "title": "Vehicle Parts Theft",
+    "category": "Theft",
+    "status": "Closed",
+    "date": "2026-01-19",
+    "location": "Agadir",
+    "description": "Parts were removed from a parked vehicle overnight. Fictional demo record with a resolved status.",
+    "relatedPeople": ["P-0097"]
+  },
+  {
+    "id": "CASE-1231",
+    "title": "Counterfeit Ticket Listings",
+    "category": "Fraud",
+    "status": "Open",
+    "date": "2026-07-03",
+    "location": "Marrakesh",
+    "description": "Fictional demo case illustrating a listing of counterfeit event tickets sold through an online marketplace.",
+    "relatedPeople": []
+  }
+]

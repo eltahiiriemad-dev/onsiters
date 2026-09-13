@@ -1,0 +1,32 @@
+[
+  {
+    "username": "onsiter01",
+    "accessCode": "DEMO-1842",
+    "displayName": "Observer",
+    "role": "Field Analyst"
+  },
+  {
+    "username": "onsiter02",
+    "accessCode": "DEMO-2957",
+    "displayName": "Cipher",
+    "role": "Data Analyst"
+  },
+  {
+    "username": "onsiter03",
+    "accessCode": "DEMO-3316",
+    "displayName": "Nightwatch",
+    "role": "Case Coordinator"
+  },
+  {
+    "username": "onsiter04",
+    "accessCode": "DEMO-4471",
+    "displayName": "Lowkey",
+    "role": "Field Analyst"
+  },
+  {
+    "username": "onsiter05",
+    "accessCode": "DEMO-5029",
+    "displayName": "Greyline",
+    "role": "Research Lead"
+  }
+]

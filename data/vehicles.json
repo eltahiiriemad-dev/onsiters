@@ -1,0 +1,56 @@
+[
+  {
+    "id": "V-3301",
+    "make": "Corvel",
+    "model": "Astra",
+    "year": 2019,
+    "color": "Grey",
+    "registration": "FN-2201-DM",
+    "relatedCase": "CASE-1042"
+  },
+  {
+    "id": "V-3302",
+    "make": "Hallwyn",
+    "model": "Meridian",
+    "year": 2021,
+    "color": "Dark Blue",
+    "registration": "FN-4417-QK",
+    "relatedCase": "CASE-1077"
+  },
+  {
+    "id": "V-3303",
+    "make": "Corvel",
+    "model": "Ranger",
+    "year": 2017,
+    "color": "White",
+    "registration": "FN-8890-TL",
+    "relatedCase": "CASE-1204"
+  },
+  {
+    "id": "V-3304",
+    "make": "Iberro",
+    "model": "Solace",
+    "year": 2022,
+    "color": "Black",
+    "registration": "FN-1183-ZR",
+    "relatedCase": "CASE-1156"
+  },
+  {
+    "id": "V-3305",
+    "make": "Hallwyn",
+    "model": "Corsa",
+    "year": 2020,
+    "color": "Silver",
+    "registration": "FN-6642-BP",
+    "relatedCase": "CASE-1123"
+  },
+  {
+    "id": "V-3306",
+    "make": "Iberro",
+    "model": "Vantage",
+    "year": 2018,
+    "color": "Red",
+    "registration": "FN-3095-WC",
+    "relatedCase": "CASE-1204"
+  }
+]

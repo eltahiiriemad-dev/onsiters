@@ -1,0 +1,27 @@
+[
+  {
+    "user": "Observer",
+    "time": "19:42",
+    "text": "Anyone looking into CASE-1042?"
+  },
+  {
+    "user": "Cipher",
+    "time": "19:43",
+    "text": "Yeah, I'm checking the related records now."
+  },
+  {
+    "user": "Nightwatch",
+    "time": "19:44",
+    "text": "I found something interesting in the vehicle log."
+  },
+  {
+    "user": "Lowkey",
+    "time": "19:46",
+    "text": "Send it over when you can, I'll cross-check with P-0091."
+  },
+  {
+    "user": "Greyline",
+    "time": "19:50",
+    "text": "CASE-1108 has a similar pattern if anyone wants a second case to compare."
+  }
+]

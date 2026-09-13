@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Onsiters — Cases</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      const content = renderShell("cases", "Cases");
+      if (!content) return;
+
+      const cases = await loadData("cases.json");
+      const people = await loadData("people.json");
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get("id");
+
+      if (id) {
+        renderDetail(id);
+      } else {
+        renderList();
+      }
+
+      function renderList() {
+        content.innerHTML = `
+          <p class="lede">Fictional case records used to populate the Onsiters demo. None of these describe real incidents.</p>
+          <div class="record-list" id="caseList"></div>
+        `;
+        document.getElementById("caseList").innerHTML = cases
+          .map(
+            (c) => `
+          <a class="record-row" href="cases.html?id=${encodeURIComponent(c.id)}">
+            <div class="record-main">
+              <div class="id">${c.id}</div>
+              <div class="title">${c.title}</div>
+              <div class="sub">${c.category} · ${c.location} · ${c.date}</div>
+            </div>
+            <span class="pill ${statusClass(c.status)}">${c.status}</span>
+            <span class="link-arrow">VIEW →</span>
+          </a>`
+          )
+          .join("");
+      }
+
+      function renderDetail(caseId) {
+        const c = cases.find((x) => x.id === caseId);
+        if (!c) {
+          content.innerHTML = `
+            <a class="back-link" href="cases.html">← Back to cases</a>
+            <div class="search-empty">No case found with ID ${caseId}.</div>`;
+          return;
+        }
+
+        const related = c.relatedPeople
+          .map((pid) => people.find((p) => p.id === pid))
+          .filter(Boolean);
+
+        content.innerHTML = `
+          <a class="back-link" href="cases.html">← Back to cases</a>
+          <div class="detail-card">
+            <div class="id">${c.id}</div>
+            <h3>${c.title}</h3>
+            <span class="pill ${statusClass(c.status)}">${c.status}</span>
+            <div class="detail-grid">
+              <div><div class="k">CATEGORY</div><div class="v">${c.category}</div></div>
+              <div><div class="k">DATE</div><div class="v">${c.date}</div></div>
+              <div><div class="k">LOCATION</div><div class="v">${c.location}</div></div>
+              <div><div class="k">CASE ID</div><div class="v">${c.id}</div></div>
+            </div>
+            <div class="detail-desc">${c.description}</div>
+          </div>
+
+          <div class="result-group-label">RELATED PEOPLE</div>
+          <div class="record-list" id="relatedPeople">
+            ${
+              related.length
+                ? related
+                    .map(
+                      (p) => `
+              <a class="record-row" href="people.html?id=${encodeURIComponent(p.id)}">
+                <div class="record-main">
+                  <div class="id">${p.id}</div>
+                  <div class="title">${p.name}</div>
+                  <div class="sub">${p.city}, ${p.country}</div>
+                </div>
+                <span class="pill ${statusClass(p.status)}">${p.status}</span>
+                <span class="link-arrow">VIEW →</span>
+              </a>`
+                    )
+                    .join("")
+                : `<div class="search-empty">No related people on file for this case.</div>`
+            }
+          </div>
+        `;
+      }
+    });
+  </script>
+</body>
+</html>

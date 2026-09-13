@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Onsiters — Login</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="login-screen">
+    <div class="login-topline">
+      <span id="loginSessionId">SES-000000</span>
+      <span>FICTIONAL DEMO INTERFACE</span>
+    </div>
+
+    <div class="login-card">
+      <div class="login-mark">ONSITERS // ACCESS</div>
+      <h1>WELCOME TO ONSITERS</h1>
+      <p class="subtitle">Open Source Investigation Network</p>
+
+      <form id="loginForm" novalidate>
+        <div class="field">
+          <label for="username">Username</label>
+          <input id="username" type="text" autocomplete="off" />
+        </div>
+        <div class="field">
+          <label for="accessCode">Access Code</label>
+          <input id="accessCode" type="password" autocomplete="off" />
+        </div>
+        <button class="login-btn" type="submit">Log in</button>
+        <div class="login-error" id="loginError"></div>
+      </form>
+
+      <div class="login-foot">
+        This is a fictional, offline demo. No real accounts, government
+        systems, or law-enforcement databases are involved.<br />
+        Demo login: onsiter01 / DEMO-1842
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

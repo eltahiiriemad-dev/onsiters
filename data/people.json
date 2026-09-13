@@ -1,0 +1,74 @@
+[
+  {
+    "id": "P-0091",
+    "name": "Yassine Belmokhtar",
+    "age": 34,
+    "country": "Fictionland",
+    "city": "Rabat",
+    "status": "Person of Interest",
+    "relatedCases": ["CASE-1042"]
+  },
+  {
+    "id": "P-0092",
+    "name": "Sara Idrissi",
+    "age": 27,
+    "country": "Fictionland",
+    "city": "Casablanca",
+    "status": "Witness",
+    "relatedCases": ["CASE-1042", "CASE-1108"]
+  },
+  {
+    "id": "P-0093",
+    "name": "Marc Dubreuil",
+    "age": 41,
+    "country": "Fictionland",
+    "city": "Tangier",
+    "status": "Person of Interest",
+    "relatedCases": ["CASE-1077"]
+  },
+  {
+    "id": "P-0094",
+    "name": "Amina Cherkaoui",
+    "age": 52,
+    "country": "Fictionland",
+    "city": "Fes",
+    "status": "Reporting Party",
+    "relatedCases": ["CASE-1108"]
+  },
+  {
+    "id": "P-0095",
+    "name": "Tomás Ferreira",
+    "age": 29,
+    "country": "Fictionland",
+    "city": "Marrakesh",
+    "status": "Cleared",
+    "relatedCases": ["CASE-1123"]
+  },
+  {
+    "id": "P-0096",
+    "name": "Leila Ouazzani",
+    "age": 38,
+    "country": "Fictionland",
+    "city": "Rabat",
+    "status": "Person of Interest",
+    "relatedCases": ["CASE-1156"]
+  },
+  {
+    "id": "P-0097",
+    "name": "Karim Zeroual",
+    "age": 45,
+    "country": "Fictionland",
+    "city": "Agadir",
+    "status": "Witness",
+    "relatedCases": ["CASE-1077"]
+  },
+  {
+    "id": "P-0098",
+    "name": "Nora Benslimane",
+    "age": 31,
+    "country": "Fictionland",
+    "city": "Casablanca",
+    "status": "Reporting Party",
+    "relatedCases": ["CASE-1042"]
+  }
+]

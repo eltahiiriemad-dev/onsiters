@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Onsiters — People</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      const content = renderShell("people", "People");
+      if (!content) return;
+
+      const people = await loadData("people.json");
+      const cases = await loadData("cases.json");
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get("id");
+
+      if (id) {
+        renderDetail(id);
+      } else {
+        renderList();
+      }
+
+      function renderList() {
+        content.innerHTML = `
+          <p class="lede">Fictional demo profiles used to illustrate the Onsiters people database. No real identities.</p>
+          <div class="record-list" id="peopleList"></div>
+        `;
+        document.getElementById("peopleList").innerHTML = people
+          .map(
+            (p) => `
+          <a class="record-row" href="people.html?id=${encodeURIComponent(p.id)}">
+            <div class="record-main">
+              <div class="id">${p.id}</div>
+              <div class="title">${p.name}</div>
+              <div class="sub">${p.city}, ${p.country} · age ${p.age}</div>
+            </div>
+            <span class="pill ${statusClass(p.status)}">${p.status}</span>
+            <span class="link-arrow">VIEW →</span>
+          </a>`
+          )
+          .join("");
+      }
+
+      function renderDetail(personId) {
+        const p = people.find((x) => x.id === personId);
+        if (!p) {
+          content.innerHTML = `
+            <a class="back-link" href="people.html">← Back to people</a>
+            <div class="search-empty">No profile found with ID ${personId}.</div>`;
+          return;
+        }
+
+        const related = p.relatedCases
+          .map((cid) => cases.find((c) => c.id === cid))
+          .filter(Boolean);
+
+        content.innerHTML = `
+          <a class="back-link" href="people.html">← Back to people</a>
+          <div class="detail-card">
+            <div class="id">${p.id}</div>
+            <h3>${p.name}</h3>
+            <span class="pill ${statusClass(p.status)}">${p.status}</span>
+            <div class="detail-grid">
+              <div><div class="k">AGE</div><div class="v">${p.age}</div></div>
+              <div><div class="k">CITY</div><div class="v">${p.city}</div></div>
+              <div><div class="k">COUNTRY</div><div class="v">${p.country}</div></div>
+              <div><div class="k">RECORD ID</div><div class="v">${p.id}</div></div>
+            </div>
+          </div>
+
+          <div class="result-group-label">RELATED CASES</div>
+          <div class="record-list" id="relatedCases">
+            ${
+              related.length
+                ? related
+                    .map(
+                      (c) => `
+              <a class="record-row" href="cases.html?id=${encodeURIComponent(c.id)}">
+                <div class="record-main">
+                  <div class="id">${c.id}</div>
+                  <div class="title">${c.title}</div>
+                  <div class="sub">${c.category} · ${c.location} · ${c.date}</div>
+                </div>
+                <span class="pill ${statusClass(c.status)}">${c.status}</span>
+                <span class="link-arrow">VIEW →</span>
+              </a>`
+                    )
+                    .join("")
+                : `<div class="search-empty">No related cases on file for this profile.</div>`
+            }
+          </div>
+        `;
+      }
+    });
+  </script>
+</body>
+</html>
