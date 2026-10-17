@@ -64,11 +64,11 @@
   },
   {
     "id": "P-0098",
-    "name": "Nora Benslimane",
-    "age": 31,
-    "country": "Fictionland",
-    "city": "Casablanca",
-    "status": "Reporting Party",
+    "name": "Unknown",
+    "age": 40,
+    "country": "Morocco",
+    "city": "Rabat",
+    "status": "searching",
     "relatedCases": ["CASE-1042"]
   }
 ]
