@@ -1,11 +1,11 @@
 [
   {
-    "id": "P-0091",
-    "name": "Yassine Belmokhtar",
-    "age": 34,
-    "country": "Fictionland",
+    "id": "G-0001",
+    "name": "hajar mitre",
+    "age": 20,
+    "country": "Morocco, oujda",
     "city": "Rabat",
-    "status": "Person of Interest",
+    "status": "ex",
     "relatedCases": ["CASE-1042"]
   },
   {
